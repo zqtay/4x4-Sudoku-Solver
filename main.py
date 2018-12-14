@@ -23,6 +23,7 @@ def rowprobe(row):
   return probe
 
 def solve4x4(A,B,C,D):
+  sol=[]
   Aprobe=rowprobe(A)
   Bprobe=rowprobe(B)
   Cprobe=rowprobe(C)
@@ -35,7 +36,8 @@ def solve4x4(A,B,C,D):
               if all(isunique(a[n]+a[n+1]+b[n]+b[n+1])is True for n in [0,2]):
                 if all(isunique(c[n]+c[n+1]+d[n]+d[n+1])is True for n in [0,2]):
                   print(a+"\n"+b+"\n"+c+"\n"+d+"\n")
-                  return [a,b,c,d]
+                  sol.append([a,b,c,d])
+  return sol
 
 
 
